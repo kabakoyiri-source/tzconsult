@@ -8,7 +8,8 @@ Static website (HTML / CSS / JavaScript). No build step and no framework: upload
 - `expertise.html` – Expertise, Client Representation, Management of affairs
 - `contact.html` – Contact form
 - `legal.html` – Legal notice and privacy policy
-- `css/style.css`, `js/main.js`, `images/` (original artworks, owned by the client)
+- `css/style.css`, `js/main.js`, `images/` (original artworks and generated editorial images)
+- `images/GENERATED-IMAGES.md` — image generation prompts and the final asset list
 
 Fonts load from Google Fonts (Cormorant Garamond for headings, Jost for text).
 

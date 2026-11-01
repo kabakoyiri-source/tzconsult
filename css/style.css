@@ -1,7 +1,7 @@
 /* Tzeriz Consultant
    Private-bank editorial: midnight ink, warm ivory paper, champagne-gold hairlines.
-   Cormorant Garamond for display, Jost for text. The painted artworks sit behind ink veils,
-   so every page opens on the same deep, quiet surface before turning to paper. */
+   Cormorant Garamond for display, Jost for text. Editorial photography and painted
+   artworks sit behind ink veils before each page turns to paper. */
 
 :root {
   --ink: #0b1322;
@@ -386,6 +386,8 @@ html { scrollbar-color: var(--gold) var(--ink); scrollbar-width: thin; }
 .intro__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(64px, 8vw, 136px); align-items: center; }
 .intro__cols { max-width: 60ch; margin: 2rem 0 1.6rem; }
 .intro__art { position: relative; margin: 0; width: min(100%, 470px); justify-self: end; }
+.intro__art .arch__plx { inset: 0; }
+.intro__art .arch__plx img { object-position: center top; }
 .intro__art .seal { left: -64px; bottom: 56px; }
 @media (max-width: 960px) {
   .intro__grid { grid-template-columns: 1fr; }
@@ -511,19 +513,24 @@ html { scrollbar-color: var(--gold) var(--ink); scrollbar-width: thin; }
 
 /* ---------- Closing call to action ---------- */
 .cta-final { position: relative; isolation: isolate; overflow: hidden; text-align: center; padding-block: clamp(120px, 15vw, 220px); }
+.cta-final__globe { position: absolute; inset: 0; z-index: -3; pointer-events: none; }
+.cta-final__globe img { width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }
 .cta-final::before {
   content: ""; position: absolute; inset: 0; z-index: -2;
   background:
-    radial-gradient(55% 65% at 50% 115%, rgba(184, 149, 90, 0.2), transparent 70%),
-    radial-gradient(45% 50% at 50% -15%, rgba(70, 92, 140, 0.35), transparent 70%);
+    linear-gradient(180deg, rgba(11, 19, 34, 0.65), rgba(11, 19, 34, 0.18) 30%, rgba(11, 19, 34, 0.2) 62%, rgba(11, 19, 34, 0.92)),
+    radial-gradient(ellipse at 50% 42%, rgba(11, 19, 34, 0.66) 0%, rgba(11, 19, 34, 0.48) 38%, rgba(11, 19, 34, 0.16) 72%);
 }
-.cta-final__rings { position: absolute; left: 50%; top: 50%; z-index: -1; width: min(980px, 130vw); aspect-ratio: 1; transform: translate(-50%, -50%); border: 1px solid rgba(212, 183, 127, 0.14); border-radius: 50%; }
-.cta-final__rings::before, .cta-final__rings::after { content: ""; position: absolute; border: 1px solid rgba(212, 183, 127, 0.1); border-radius: 50%; }
-.cta-final__rings::before { inset: 12%; }
-.cta-final__rings::after { inset: 26%; border-color: rgba(212, 183, 127, 0.08); }
+.cta-final > .wrap { position: relative; }
 .cta-final h2 { max-width: 13ch; margin: 0 auto 0.4em; font-size: clamp(2.8rem, 1.5rem + 5vw, 6.4rem); }
-.cta-final p { max-width: 52ch; margin: 0 auto 52px; font-size: 1.0625rem; }
+.cta-final h2, .cta-final p { text-shadow: 0 2px 28px rgba(11, 19, 34, 0.45); }
+.cta-final p { max-width: 52ch; margin: 0 auto 52px; font-size: 1.0625rem; color: #c2c9d6; }
 .cta-final__actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px 48px; }
+@media (max-width: 680px) {
+  .cta-final__globe img { object-position: 56% center; }
+  .cta-final__actions { gap: 28px; }
+  .cta-final__actions .link-arrow { font-size: clamp(1rem, 4.5vw, 1.3rem); }
+}
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--on-dark-soft); font-size: 0.95rem; border-top: 1px solid rgba(212, 183, 127, 0.18); }
@@ -561,6 +568,11 @@ html { scrollbar-color: var(--gold) var(--ink); scrollbar-width: thin; }
 .page-head--overlap { padding-bottom: clamp(150px, 17vw, 260px); }
 .page-head__media { position: absolute; inset: -12% 0; z-index: -2; will-change: transform; }
 .page-head__img { position: absolute; inset: 0; background: var(--ink) center / cover no-repeat; filter: saturate(0.85); }
+.page-head--firm .page-head__img { background-size: auto 100%; background-position: right center; }
+.page-head--globe .page-head__img { background-image: url('../images/contact-globe.jpg'); background-position: 70% 52%; filter: none; }
+@media (max-width: 680px) {
+  .page-head--globe .page-head__img { background-image: url('../images/contact-globe-768.jpg'); }
+}
 .page-head::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
@@ -633,7 +645,7 @@ html { scrollbar-color: var(--gold) var(--ink); scrollbar-width: thin; }
 .area:first-child { border-top: 0; }
 .area--flip .area__media { order: 2; }
 .area__media { position: sticky; top: 120px; }
-.area__frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--ink-3); }
+.area__frame { position: relative; aspect-ratio: 5 / 4; overflow: hidden; background: var(--ink-3); }
 .area__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.8s var(--ease-out); }
 .area__media:hover .area__frame img { transform: scale(1.04); }
 .area__num {
