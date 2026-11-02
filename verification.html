@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verification | Tzeriz Consultant</title>
+<meta name="description" content="KYC and address verification. Provide your details for review.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1322">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+<meta property="og:title" content="Verification | Tzeriz Consultant">
+<meta property="og:description" content="KYC and address verification. Provide your details for review.">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Animations only run when JavaScript does; if main.js fails to load, the static page is shown.
+  (function (d) {
+    var h = d.documentElement;
+    h.classList.add('js');
+    setTimeout(function () { if (!window.TZ_READY) h.classList.remove('js'); }, 3500);
+  })(document);
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html" aria-label="Tzeriz Consultant, home">
+      <svg class="brand__mark" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21.4"/><circle class="brand__mark-in" cx="22" cy="22" r="18.2"/><text x="22" y="29.6" text-anchor="middle">T</text></svg>
+      <span class="brand__text"><span class="brand__name">Tzeriz</span><span class="brand__sub">Consultant</span></span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a href="firm.html">The Firm</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="verification.html" aria-current="page">Verification</a></li>
+        <li class="nav__mobile"><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__extra">
+        <p>Meetings by appointment</p>
+        <a href="mailto:contact@tzeriz-consultant.com">contact@tzeriz-consultant.com</a>
+      </div>
+    </nav>
+    <a class="header-cta" href="contact.html">Contact us</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__label">Menu</span><span class="nav-toggle__bars" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-head page-head--compact verification-hero is-dark">
+  <div class="page-head__media" data-parallax="0.15" aria-hidden="true"><div class="page-head__img" style="background-image:url('images/verification/about-image.jpg')"></div></div>
+  <div class="wrap">
+    <nav class="crumbs load-fade" style="--ld:.1s" aria-label="Breadcrumb"><a href="index.html">Home</a><i aria-hidden="true"></i><span aria-current="page">Verification</span></nav>
+    <span class="eyebrow load-fade" style="--ld:.2s">Verification</span>
+    <h1 class="lines"><span class="line"><span>KYC &amp; address</span></span><span class="line"><span><em>verification</em></span></span></h1>
+    <p class="page-head__lede load-fade" style="--ld:.5s">Provide your details for review.</p>
+  </div>
+</section>
+
+<section class="verification-intake section--paper" aria-labelledby="verification-form-title">
+  <div class="wrap">
+    <ol class="verification-steps" aria-label="Verification process">
+      <li class="is-current" id="verification-step-submit" aria-current="step"><span class="verification-steps__number" aria-hidden="true">I</span><div><span>Step 1</span><strong>Upload Documents</strong></div></li>
+      <li id="verification-step-review"><span class="verification-steps__number" aria-hidden="true">II</span><div><span>Step 2</span><strong>Review Process</strong></div></li>
+      <li id="verification-step-complete"><span class="verification-steps__number" aria-hidden="true">III</span><div><span>Step 3</span><strong>Verification Complete</strong></div></li>
+    </ol>
+    <div class="verification-card">
+      <div class="verification-card__head"><span class="eyebrow">Your details</span><h2 id="verification-form-title">Document <em>submission</em></h2></div>
+      <form class="form verification-form" id="kyc-form" method="post" action="verification.html" data-endpoint="">
+        <div class="field"><label for="user-name">Name</label><input id="user-name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" maxlength="120" required></div>
+        <div class="field"><label for="user-number">N°</label><input id="user-number" name="number" type="text" placeholder="Enter your number" autocomplete="off" maxlength="120" required></div>
+        <div class="verification-address full">
+          <label for="doc-input">Crypto address or IBAN</label>
+          <div class="verification-address__entry">
+            <textarea id="doc-input" name="documents" placeholder="Click &quot;Paste&quot; to submit your crypto address or iban" rows="3" maxlength="256" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="verification-helper" required></textarea>
+            <button class="btn btn--gold" id="paste-btn" type="button">Paste</button>
+          </div>
+          <p id="verification-helper">You can paste your address or enter it directly in the field above.</p>
+        </div>
+        <div class="verification-actions full">
+          <button class="btn" id="submit-btn" type="submit" disabled>Submit for Verification <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+          <button class="verification-retry" id="retry-btn" type="reset" hidden>Retry</button>
+        </div>
+        <p class="verification-status full" id="kyc-status" role="status" aria-live="polite" hidden></p>
+        <noscript><p class="form-note full">Please <a href="contact.html">contact the firm</a> to arrange a verification review.</p></noscript>
+      </form>
+    </div>
+    <a class="verification-back link-arrow" href="index.html">Back to home</a>
+  </div>
+</section>
+
+<section class="section verification-aml" aria-labelledby="aml-title">
+  <div class="wrap">
+    <div class="verification-aml__head">
+      <div><span class="eyebrow reveal">AML Crypto</span><h2 class="reveal" id="aml-title">Trust through <em>verification</em></h2></div>
+      <div class="verification-aml__brand reveal"><img src="images/verification/amlcrypto.webp" alt="AML Crypto" width="1024" height="1024" loading="lazy" decoding="async"><p>Meye Asset Management <span>&times; AmlCrypto.io</span></p></div>
+    </div>
+    <ul class="verification-highlights" data-stagger>
+      <li><span aria-hidden="true">01</span><h3>Enhanced Trust</h3></li>
+      <li><span aria-hidden="true">02</span><h3>Verified Capital</h3></li>
+      <li><span aria-hidden="true">03</span><h3>Secure Execution</h3></li>
+    </ul>
+    <div class="verification-about">
+      <div><span class="eyebrow reveal">About AML Crypto</span><h3 class="reveal">A clearer view<br>of <em>compliance</em></h3><a class="link-arrow reveal" href="https://www.amlcrypto.io" target="_blank" rel="noopener noreferrer">www.amlcrypto.io</a></div>
+      <div>
+        <p class="reveal">AML Crypto is recognized as one of the global leaders in cryptocurrency compliance and anti-money laundering solutions, providing advanced verification services, transaction monitoring, and risk assessment to strengthen the legitimacy of blockchain and crypto operations. Their approach combines comprehensive address screening, real-time risk scoring, and regulatory compliance verification, ensuring suspicious activities are detected and addressed before they become compliance risks.</p>
+        <p class="reveal">Beyond technical compliance, AML Crypto delivers intelligence and legitimacy assessment on crypto addresses and transactions, helping protect the capital involved and reinforcing confidence in the integrity of the ecosystem. With an AML Crypto verification, investors gain greater transparency, improved risk visibility, and a higher level of assurance regarding the project's regulatory compliance and long-term stability.</p>
+        <p class="reveal">Today, an AML Crypto verification is widely considered a mark of trust — a strong signal of credibility that reassures partners, institutions, and capital investors.</p>
+      </div>
+    </div>
+    <div class="verification-partnership is-dark">
+      <span class="eyebrow reveal">Working together</span><h3 class="reveal">Strategic <em>Partnership</em></h3>
+      <p class="reveal">Meye Asset Management partners with AML Crypto to ensure full transparency, traceability, and legitimacy of all funds involved. This collaboration provides deep compliance analysis supported by a clear and structured verification report, strengthening confidence and security in every transaction.</p>
+      <p class="reveal">With AML Crypto's expertise, Meye Asset Management offers its clients a reliable, verified, and industry-aligned environment for major financial operations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand verification-donation" id="donation" aria-labelledby="donation-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow reveal">Support us</span><h2 class="reveal" id="donation-title">Donation</h2></div>
+      <p class="reveal">Support the development of Meye Asset Management by sending a contribution to one of the addresses below.</p>
+    </div>
+    <div class="verification-donations" data-stagger>
+      <article class="verification-donation-card"><span class="verification-donation-card__type">Bank transfer</span><h3>IBAN</h3><code>LU720109165346779368</code><button class="verification-copy" type="button" data-address="LU720109165346779368" aria-label="Copy IBAN"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 16H3V3h13v2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span>Copy IBAN</span></button></article>
+      <article class="verification-donation-card"><span class="verification-donation-card__type">Bitcoin</span><h3>BTC</h3><code>bc1qlvjq0jz7dg9c22ry37km4lr4qgl6kr5shyv97f</code><button class="verification-copy" type="button" data-address="bc1qlvjq0jz7dg9c22ry37km4lr4qgl6kr5shyv97f" aria-label="Copy Bitcoin address"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 16H3V3h13v2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span>Copy address</span></button></article>
+      <article class="verification-donation-card"><span class="verification-donation-card__type">Ethereum</span><h3>ETH</h3><code>0x85A93c354ab70a37471847d769aB794b22C5A8bf</code><button class="verification-copy" type="button" data-address="0x85A93c354ab70a37471847d769aB794b22C5A8bf" aria-label="Copy Ethereum address"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 16H3V3h13v2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span>Copy address</span></button></article>
+    </div>
+    <p class="verification-copy-status" id="copy-status" role="status" aria-live="polite"></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer is-dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Tzeriz Consultant, home">
+          <svg class="brand__mark" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21.4"/><circle class="brand__mark-in" cx="22" cy="22" r="18.2"/><text x="22" y="29.6" text-anchor="middle">T</text></svg>
+          <span class="brand__text"><span class="brand__name">Tzeriz</span><span class="brand__sub">Consultant</span></span>
+        </a>
+        <p class="footer-about">A lawyer-led advisory group acting for companies, private clients and professionals in business, real estate and finance.</p>
+      </div>
+      <div>
+        <h4>The Firm</h4>
+        <ul>
+          <li><a href="firm.html">About us</a></li>
+          <li><a href="firm.html#leadership">Leadership</a></li>
+          <li><a href="firm.html#team">Our team</a></li>
+          <li><a href="firm.html#clients">Who we act for</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Expertise</h4>
+        <ul>
+          <li><a href="expertise.html#business">Business advisory</a></li>
+          <li><a href="expertise.html#real-estate">Real estate</a></li>
+          <li><a href="expertise.html#finance">Financial advisory</a></li>
+          <li><a href="expertise.html#representation">Client representation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@tzeriz-consultant.com">contact@tzeriz-consultant.com</a></li>
+          <li>Meetings by appointment</li>
+          <li><a href="contact.html">Send us a message</a></li>
+          <li><a href="verification.html">Verification</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-mark" aria-hidden="true">Tzeriz</p>
+    <div class="footer-base">
+      <span>&copy; <span id="year">2026</span> Tzeriz Consultant. All rights reserved.</span>
+      <ul>
+        <li><a href="legal.html">Legal notice</a></li>
+        <li><a href="legal.html#privacy">Privacy policy</a></li>
+      </ul>
+      <a class="to-top" href="#top">Back to top <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4M6 10l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+<script src="js/verification.js" defer></script>
+</body>
+</html>
