@@ -140,6 +140,13 @@
     }
   }
 
+  var donationSection = document.getElementById('donation');
+  if (donationSection) {
+    ['selectstart', 'dragstart', 'copy'].forEach(function (eventName) {
+      donationSection.addEventListener(eventName, function (event) { event.preventDefault(); });
+    });
+  }
+
   var copyStatus = document.getElementById('copy-status');
   document.querySelectorAll('.verification-copy').forEach(function (button) {
     var label = button.querySelector('span');
@@ -159,7 +166,7 @@
         copyStatus.textContent = button.getAttribute('aria-label').replace(/^Copy /, '') + ' copied.';
         setTimeout(function () { label.textContent = originalLabel; button.classList.remove('is-copied'); }, 2000);
       } catch (error) {
-        copyStatus.textContent = 'Select the address above and copy it manually.';
+        copyStatus.textContent = 'Copy could not be completed. Please try again or contact the firm.';
       } finally {
         button.disabled = false;
       }
